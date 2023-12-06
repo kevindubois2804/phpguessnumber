@@ -74,12 +74,11 @@ if (isset($_POST["guess"]) && !empty($_POST["guess"])) {
 
     } else {
 
-
         $_SESSION['guesscount']++;
         $nombreCoups = $_SESSION['guesscount'];
 
-        if ($_SESSION['guesscount'] > $nombreCoupsMax - 1) {
-
+        if ($_SESSION['guesscount'] > $nombreCoupsMax - 1 && $userGuess != $_SESSION['mysteryNumber']) {
+            
             $_SESSION['defaite']++;
             $defaite = $_SESSION['defaite'];
             $message = "Vous avez dépassé les " . $nombreCoupsMax. " essais autorisés. Vous avez perdu.";
