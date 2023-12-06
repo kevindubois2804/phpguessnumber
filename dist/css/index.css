@@ -27,11 +27,15 @@
   align-items: center;
   justify-content: space-between;
 }
+.guess-container__game-buttons {
+  display: flex;
+  gap: 2rem;
+}
 .guess-container__game-options {
   display: flex;
   flex-direction: column;
 }
-.guess-container__play-again-button, .guess-container__options-button, .guess-container__check-button, .guess-container__reset-button {
+.guess-container__reset-button, .guess-container__options-button, .guess-container__check-button, .guess-container__reset-button {
   border: none;
   padding: 0.5rem 1.5rem;
   cursor: pointer;
@@ -74,6 +78,44 @@
   background-color: #cb3050;
   border-radius: 4px;
   width: 25%;
+}
+.guess-container__mystery-number i {
+  animation: shake 0.5s linear infinite;
+}
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
 }
 .guess-container__game-statut-message {
   text-align: center;

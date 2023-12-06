@@ -19,6 +19,15 @@ if (isset($_POST['replayornot'])) {
     }
 }
 
+if (isset($_POST['boutonreset'])) {
+    if ($_POST['boutonreset'] == 'reset') {
+        unset($_SESSION['mysteryNumber']);
+        unset($_SESSION['guesscount']);
+        unset($_POST);
+        header("index.php");
+    }
+}
+
 if (!isset($_SESSION['guesscount'])) {
     $_SESSION['guesscount'] = 0;
 }
@@ -152,6 +161,7 @@ if (!empty($_POST['bornesup'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./dist/css/index.css">
+    <script src="https://kit.fontawesome.com/4aa59fef57.js" crossorigin="anonymous"></script>
     <script src="./scripts/index.js" defer></script>
     <title>Document</title>
 </head>
@@ -163,7 +173,10 @@ if (!empty($_POST['bornesup'])) {
             <div class="guess-container__menu-wrapper">
     
                 <div class="guess-container__game-buttons">
-                    <!-- <button class="guess-container__play-again-button">Nouvelle partie</button> -->
+                    <form action="" method="post">
+
+                        <button name="boutonreset" class="guess-container__reset-button" value="reset">Reset</button>
+                    </form>
                     <button class="guess-container__options-button">Options</button>
                 </div>
             
@@ -174,8 +187,8 @@ if (!empty($_POST['bornesup'])) {
                 
                 
             </div>
-            <h2>Le juste prix !! (sans Vincent Lagaff) </h2>
-            <p class="guess-container__mystery-number"><?php echo (isset($userGuess) && ( ($userGuess == $nombreMagique) || ($nombreCoups > $nombreCoupsMax - 1) ) ) ? $nombreMagique : '?' ?> </p>
+            <h2>Le juste prix !! (sans Vincent Lagaf') </h2>
+            <p class="guess-container__mystery-number"><?php echo (isset($userGuess) && ( ($userGuess == $nombreMagique) || ($nombreCoups > $nombreCoupsMax - 1) ) ) ? $nombreMagique : '<i class="fa-solid fa-gift"></i>' ?> </p>
             <p class="guess-container__game-statut-message"><?php echo $message?></p>
     
             <div class="guess-container__game-data">

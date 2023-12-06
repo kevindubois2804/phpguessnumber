@@ -6,4 +6,4 @@ optionButton.addEventListener("click", () => {
 
     sideBarMenu.classList.toggle("guess-container__sidebar-menu--active");
 
-})
+});
