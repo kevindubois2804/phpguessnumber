@@ -1,0 +1,152 @@
+.guess-container {
+    position: relative;
+    max-width: 850px;
+    width: 100%;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: #ddd;
+    
+    &__menu-wrapper {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+    }
+
+    &__game-options {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__play-again-button, &__options-button, &__check-button, &__reset-button {
+        border: none;
+        padding: 0.5rem 1.5rem;
+        cursor: pointer;
+        outline: none;
+        font-size: 1rem;
+        background-color: #cb3050;
+        border-radius: 4px;
+        color: #fff;
+        font-family: inherit;
+
+    }
+
+        &__play-again-button, &__options-button {
+
+            transition: 0.3s;
+    
+            &:hover {
+                transform: scale(0.98);
+                border: 5px solid #882036;
+                border-radius: 4px;
+            }
+        }
+
+    &__replay-button {
+        border: none;
+        padding: 1.5rem 1.5rem;
+        cursor: pointer;
+        outline: none;
+        font-size: 2rem;
+        background-color: #11cb42;
+        border-radius: 8px;
+        color: #fff;
+        font-family: inherit;
+    }
+    
+
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+
+    &__mystery-number {
+        text-align: center;
+        font-size: 2rem;
+        margin: 0 auto;
+        color: #fff;
+        background-color: #cb3050;
+        border-radius: 4px;
+        width: 25%;
+    
+    }
+
+    &__game-statut-message {
+        text-align: center;
+        font-size: 1.3rem;
+        margin: 1rem auto;
+    }
+
+    &__game-data {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem 0;
+    } 
+
+    &__input-number {
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        padding: 0.5rem 0.8rem;
+        font-size: 1.2rem;
+        border: 1px solid #ddd;
+    
+    }
+
+    &__sidebar-menu {
+        padding: 1rem;
+        height: 100%;
+        width: 33%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: none;
+        
+        background-color: #4f4949;
+
+        &--active {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+    }
+
+    &__sidebar-max-tries-option, &__sidebar-limits-option {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+
+    &__set-max-tries, &__set-limits-option {
+        display: block;
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        // padding: 0.5rem 0.8rem;
+        font-size: 1.2rem;
+        border: 1px solid #ddd;
+        width: 2rem;
+
+    }
+
+    &__sidebar-limits-option {
+        flex-wrap: wrap;
+    }
+
+    &__endscreen {
+        background-color: aquamarine;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+
+}
